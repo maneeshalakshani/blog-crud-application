@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include './includes/head.njk' %}
+</head>
+<header>
+    {% include './includes/header.njk' %}
+</header>
+<body>
+    {% for post in posts %}
+        <div class="post selectBlog">
+            <a href="/view/{{post.id}}">
+                <div>
+                    {{post.title}}
+                </div>    
+            </a>
+        </div>
+    {% endfor %}
+
+    {{posts[1].title}}<br>
+    {{posts[1].body}}
+</body>
+<footer>
+    {% include './includes/footer.njk' %}
+</footer>
+</html>

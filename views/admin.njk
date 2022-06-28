@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include './includes/head.njk' %}
+</head>
+<body>
+    <header>
+        {% include './includes/header.njk' %}
+    </header>
+    
+    <center>
+        <a href="/create" class="Btn addPost">
+            Create a Blog
+        </a>
+    </center>
+
+    {% for post in posts %}
+        <div class="post">
+            <div class="blogTitle">{{post.title}}</div>
+            <br>
+            <p>
+                {{post.body}}
+            </p>
+            <a href="/edit/{{post.id}}" class="Btn editPostBtn">
+                Edit
+            </a>
+            <form action="/delete/{{post.id}}?_method=DELETE" method="POST">
+                <input type="password" placeholder="Password" name="pw" />
+                <input type="submit" class="Btn deletePostBtn" value="Delete" />
+            </form>
+        </div>
+    {% endfor %}    
+
+    <footer>
+        {% include './includes/footer.njk' %}
+    </footer>
+</body>
+</html>

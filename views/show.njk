@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include './includes/head.njk' %}
+</head>
+<body>
+    <header>
+        {% include './includes/header.njk' %}
+    </header>
+    
+    <div class="post">
+        <div class="blogTitle">{{post.title}}</div>
+        <p>{{post.body}}</p>
+    </div>
+
+    <footer>
+        {% include './includes/footer.njk' %}
+    </footer>
+</body>
+</html>
